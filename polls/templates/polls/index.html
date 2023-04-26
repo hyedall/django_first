@@ -1,0 +1,12 @@
+{% if questions %}
+<ul>
+    {% for question in questions %} <!-- 반복문 -->
+        <!-- <li><a href="/polls/{{question.id}}">{{question.question_text}}</a></li> 변수를 쓰고 싶을 때 -->
+        <li><a href="{% url 'question:question_detail' question.id %}">{{question.question_text}}</a></li>
+    {% endfor %}
+
+
+</ul>
+{% else %}
+<p>no questions</p>
+{% endif %}
